@@ -43,5 +43,11 @@ function fn () {
   color: #fff;
   background-color: rgb(200, 100, 34);
 }
+.doc >>> .pre {
+  color: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgb(30, 30, 30)
+}
 
 ```

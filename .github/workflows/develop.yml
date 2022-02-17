@@ -1,6 +1,6 @@
 name: Github publish
 on:
-  push
+  push:
     branches: [develop]
 jobs:
   get-markdown:

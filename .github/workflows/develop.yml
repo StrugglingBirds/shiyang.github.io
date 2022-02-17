@@ -12,8 +12,6 @@ jobs:
         ACCESS_TOKEN: ${{secrets.HOME_ACTIONS_SECRET}}
       run:
         git clone https://github.com/StrugglingBirds/home.git -b develop
-    - name: open folder
-      run: ls && cd .. && ls
     - name: install
       run: npm install
     - name: build

@@ -1,8 +1,7 @@
 name: Github publish
 on:
   push
-    branches:
-      - develop
+    branches: [develop]
 jobs:
   get-markdown:
     name: Get markdown file

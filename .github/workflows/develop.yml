@@ -17,6 +17,4 @@ jobs:
     - name: install
       run: cd home && yarn install
     - name: build
-      run: yarn run build
-    - name: show success
-      run: echo success
+      run: cd home && yarn run build

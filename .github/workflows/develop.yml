@@ -7,6 +7,8 @@ jobs:
     name: Get markdown file
     runs-on: windows-latest
     steps:
+    - name: show file
+      run: ls
     - name: checkout file
       env:
         ACCESS_TOKEN: ${{secrets.HOME_ACTIONS_SECRET}}

@@ -3,6 +3,9 @@ import { useVant } from './components/vant'
 import App from './App.vue'
 import router from './router'
 
+import './assets/css/highlight.min.css'
+import './assets/css/vscode.theme.code.css'
+
 import 'vant/lib/index.css'
 import './assets/css/initial.css'
 import './assets/css/common.css'

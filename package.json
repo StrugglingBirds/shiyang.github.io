@@ -1,5 +1,5 @@
 {
-  "name": "code",
+  "name": "Book",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "homepage": "https://strugglingbirds.github.io/home/",
   "dependencies": {
     "axios": "^0.25.0",
     "core-js": "^3.6.5",

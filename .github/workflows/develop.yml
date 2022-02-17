@@ -1,0 +1,23 @@
+name: Github publish
+on:
+  push
+    branches:
+      - develop
+jobs:
+  get-markdown:
+    name: Get markdown file
+    runs-on: windows-latest
+    steps:
+    - name: checkout file
+      env:
+        ACCESS_TOKEN: ${{secrets.HOME_ACTIONS_SECRET}}
+      run:
+        git clone https://github.com/StrugglingBirds/home.git -b develop
+    - name: open folder
+      run: cd home
+    - name: install
+      run: npm install
+    - name: build
+      run: npm run build
+    - name: show success
+      run: echo success

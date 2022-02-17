@@ -15,7 +15,7 @@ jobs:
     - name: open folder
       run: ls
     - name: install
-      run: cd home && npm install
+      run: cd home && yarn install
     - name: build
       run: npm run build
     - name: show success

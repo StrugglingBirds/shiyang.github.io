@@ -18,4 +18,6 @@ jobs:
       run: cd home && yarn install
     - name: build
       run: cd home && yarn run build
+    - name: copy
+      run: ls
 

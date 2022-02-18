@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: checkout file
       env:
-        ACCESS_TOKEN: ${{secrets.HOME_ACTIONS_SECRET}}
+        ACCESS_TOKEN: ${{secrets.HOME_TOKEN}}
         TIMESAMP: ${date}
       run:
         git clone https://github.com/StrugglingBirds/home.git -b develop
@@ -24,7 +24,7 @@ jobs:
     - name: git commit
       run: cd home && git add . && git commit -m '部署'
     - name: git remote
-      run: cd home && git remote set-url origin "https://StrugglingBirds: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@github.com/StrugglingBirds/home.git"
+      run: cd home && git remote set-url origin "https://$ACCESS_TOKEN@github.com/StrugglingBirds/home.git"
     - name: git rebase
       run: cd home && git rebase
     - name: show git config

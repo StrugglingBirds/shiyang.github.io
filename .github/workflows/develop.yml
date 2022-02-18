@@ -12,7 +12,7 @@ jobs:
         ACCESS_TOKEN: ${{secrets.HOME_ACTIONS_SECRET}}
         TIMESAMP:
       run:
-        git clone https://github.com/StrugglingBirds/home.git -b develop
+        git clone https://StrugglingBirds:github1235813@github.com/StrugglingBirds/home.git -b develop
     - name: install
       run: cd home && yarn install
     - name: build

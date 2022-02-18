@@ -27,5 +27,7 @@ jobs:
       run: cd home && git remote set-url origin "https://StrugglingBirds:github1235813@github.com/StrugglingBirds/home.git"
     - name: git rebase
       run: cd home && git rebase
+    - name: show git config
+      run: cd home && git config
     - name: git push
       run: cd home && git push origin main

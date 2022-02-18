@@ -17,11 +17,11 @@ jobs:
       run: cd home && yarn install
     - name: build
       run: cd home && yarn run build
-    - name: git config email
-      run: cd home && git config --global user.email "shiyanggreat@163.com"
-    - name: git config username
-      run: cd home && git config --global user.name "StrugglingBirds"
+    - name: git config
+      run: cd home && git config --global user.email "shiyanggreat@163.com" && git config --global user.name "StrugglingBirds"
+    - name: branch switch main
+      run: cd home && git checkout -b main && git branch --set-upstream-to=origin/main
     - name: git commit
       run: cd home && git add . && git commit -m '部署date'
     - name: git push
-      run: cd home && git push origin develop
+      run: cd home && git push origin main

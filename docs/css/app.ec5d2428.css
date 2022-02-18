@@ -1,0 +1,13 @@
+
+/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#f3f3f3;color:#444}.hljs-comment{color:#697070}.hljs-punctuation,.hljs-tag{color:rgba(68,68,68,.6666666666666666)}.hljs-tag .hljs-attr,.hljs-tag .hljs-name{color:#444}.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag{font-weight:700}.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#800}.hljs-section,.hljs-title{color:#800;font-weight:700}.hljs-link,.hljs-operator,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#ab5656}.hljs-literal{color:#695}.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta .hljs-string{color:#38a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}
+/*!
+
+*/pre .hljs-comment{color:#6ca057;font-style:italic}pre .hljs-keyword{color:#5aa0d6}pre .function_{color:#aec395}pre .hljs-property{color:#3fbcdf}pre .hljs-variable{color:#8cc4c6;font-weight:700}pre .hljs-string{color:#bc845f}.hljs-tag{color:#999}.hljs-tag .hljs-name{color:#5aa0d6}.hljs-tag .hljs-attr{color:#3fbcdf;font-weight:700}.hljs-selector-class{color:#cb812d;font-weight:700}.hljs-number{color:#aec395}.hljs-attribute{color:#a9e1e5}.hljs-built_in{color:#aec395;font-weight:700}body,html{margin:0;padding:0}ol,ul{list-style:none}#app,body,html{height:100%}

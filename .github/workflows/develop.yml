@@ -10,14 +10,12 @@ jobs:
     - name: checkout file
       env:
         ACCESS_TOKEN: ${{secrets.HOME_ACTIONS_SECRET}}
+        TIMESAMP:
       run:
         git clone https://github.com/StrugglingBirds/home.git -b develop
-    - name: open folder
-      run: ls
     - name: install
       run: cd home && yarn install
     - name: build
       run: cd home && yarn run build
-    - name: copy
-      run: ls
-
+    - name: git add
+      run: cd home && git add . && git commit -m '部署date' && git push

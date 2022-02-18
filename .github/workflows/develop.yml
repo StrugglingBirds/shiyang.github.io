@@ -21,5 +21,7 @@ jobs:
       run: cd home && git config --global user.email "shiyanggreat@163.com"
     - name: git config username
       run: cd home && git config --global user.name "StrugglingBirds"
-    - name: git publish
-      run: cd home && git add . && git commit -m '部署date' && git push
+    - name: git commit
+      run: cd home && git add . && git commit -m '部署date'
+    - name: git push
+      run: cd home && git push origin develop

@@ -23,5 +23,7 @@ jobs:
       run: cd home && git checkout -b main && git branch --set-upstream-to=origin/main
     - name: git commit
       run: cd home && git add . && git commit -m '部署date'
+    - name: git rebase
+      run: cd home && git rebase
     - name: git push
-      run: cd home && git push origin main
+      run: cd home && git push

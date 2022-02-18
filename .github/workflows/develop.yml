@@ -24,7 +24,7 @@ jobs:
     - name: git commit
       run: cd home && git add . && git commit -m '部署'
     - name: git remote
-      run: cd home && git remote set-url origin "https://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@github.com/StrugglingBirds/home.git"
+      run: cd home && git remote set-url origin "https://StrugglingBirds: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@github.com/StrugglingBirds/home.git"
     - name: git rebase
       run: cd home && git rebase
     - name: show git config

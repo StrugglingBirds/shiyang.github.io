@@ -17,17 +17,22 @@ jobs:
       run: cd home && yarn install
     - name: build
       run: cd home && yarn run build
-    - name: git config
-      run: cd home && git config --global user.email "shiyanggreat@163.com" && git config --global user.name "StrugglingBirds"
-    - name: branch switch main
-      run: cd home && git checkout -b main && git branch --set-upstream-to=origin/main
-    - name: git commit
-      run: cd home && git add . && git commit -m '部署'
-    - name: git remote
-      run: cd home && git remote set-url origin "https://$ACCESS_TOKEN@github.com/StrugglingBirds/home.git"
-    - name: git rebase
-      run: cd home && git rebase
-    - name: show git config
-      run: cd home && git config -l
-    - name: git push
-      run: cd home && git push origin main
+    - name: deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with: ACCESS_TOKEN: ${{ secrets.HOME_TOKEN }}
+            BRANCH: main
+            FOLDER: ./home/docs
+    # - name: git config
+    #   run: cd home && git config --global user.email "shiyanggreat@163.com" && git config --global user.name "StrugglingBirds"
+    # - name: branch switch main
+    #   run: cd home && git checkout -b main && git branch --set-upstream-to=origin/main
+    # - name: git commit
+    #   run: cd home && git add . && git commit -m '部署'
+    # - name: git remote
+    #   run: cd home && git remote set-url origin "https://$ACCESS_TOKEN@github.com/StrugglingBirds/home.git"
+    # - name: git rebase
+    #   run: cd home && git rebase
+    # - name: show git config
+    #   run: cd home && git config -l
+    # - name: git push
+    #   run: cd home && git push origin main

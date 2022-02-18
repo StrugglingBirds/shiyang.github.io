@@ -17,5 +17,9 @@ jobs:
       run: cd home && yarn install
     - name: build
       run: cd home && yarn run build
-    - name: git add
+    - name: git config email
+      run: cd home && git config --global user.email "shiyanggreat@163.com"
+    - name: git config username
+      run: cd home && git config --global user.name "StrugglingBirds"
+    - name: git publish
       run: cd home && git add . && git commit -m '部署date' && git push

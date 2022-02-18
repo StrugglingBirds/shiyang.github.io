@@ -19,13 +19,14 @@ jobs:
     #   run: cd home && yarn run build
     - name: checkout
       uses: actions/checkout@master
+    - name: build
+      run: /usr/bin/yarn install && yarn run build
     - name: deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with: 
         ACCESS_TOKEN: ${{ secrets.HOME_TOKEN }}
         BRANCH: main
         FOLDER: docs
-        BUILD_SCRIPT: yarn install && yarn run build
     # - name: git config
     #   run: cd home && git config --global user.email "shiyanggreat@163.com" && git config --global user.name "StrugglingBirds"
     # - name: branch switch main

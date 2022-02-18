@@ -5,7 +5,7 @@ on:
 jobs:
   get-markdown:
     name: Get markdown file
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: checkout file
       env:

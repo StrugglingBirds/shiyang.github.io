@@ -24,7 +24,7 @@ jobs:
       with: 
         ACCESS_TOKEN: ${{ secrets.HOME_TOKEN }}
         BRANCH: main
-        FOLDER: ./home/docs
+        FOLDER: docs
     # - name: git config
     #   run: cd home && git config --global user.email "shiyanggreat@163.com" && git config --global user.name "StrugglingBirds"
     # - name: branch switch main

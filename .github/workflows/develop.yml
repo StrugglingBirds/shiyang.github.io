@@ -10,7 +10,7 @@ jobs:
     - name: checkout file
       env:
         ACCESS_TOKEN: ${{secrets.HOME_ACTIONS_SECRET}}
-        TIMESAMP:
+        TIMESAMP: ${date}
       run:
         git clone https://github.com/StrugglingBirds/home.git -b develop
     - name: install
@@ -22,7 +22,7 @@ jobs:
     - name: branch switch main
       run: cd home && git checkout -b main && git branch --set-upstream-to=origin/main
     - name: git commit
-      run: cd home && git add . && git commit -m '部署date'
+      run: cd home && git add . && git commit -m '部署${TIMESAMP}'
     - name: git remote
       run: cd home && git remote set-url origin "https://StrugglingBirds:github1235813@github.com/StrugglingBirds/home.git"
     - name: git rebase

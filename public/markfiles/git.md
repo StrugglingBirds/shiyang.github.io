@@ -60,3 +60,5 @@ const stagedFile = execSync('git diff --cached --name-only', {encoding: 'utf-8'}
 // 以换行符切字符串转为提交的文件数组列表
 const commitFiles = stagedFile.split('\n').filter(filepath => filepath)
 ```
+
+### git强行推送远程仓库

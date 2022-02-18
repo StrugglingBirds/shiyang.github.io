@@ -28,6 +28,6 @@ jobs:
     - name: git rebase
       run: cd home && git rebase
     - name: show git config
-      run: cd home && git config
+      run: cd home && git config -l
     - name: git push
       run: cd home && git push origin main

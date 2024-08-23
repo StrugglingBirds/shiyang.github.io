@@ -1,12 +1,181 @@
 # GIT Hooks
 
-## git command
+## git command基本操作
+
+### 初始化git
+
+```shell
+git init
+```
 
 ### 克隆项目
 
 ```shell
 git clone <url>
+
+# 克隆指定分支
+git clone -b <branch> <url>
+
+# 例如
+git clone https://github.com/git/git.git
+
+git clone -b master https://github.com/git/git.git
 ```
+
+### 查看本地/远程仓库分支
+
+```shell
+# 本地仓库所有分支
+git branch
+
+# 远程仓库所有分支
+git branch -r
+
+# 本地和远程所有分支
+git branch -a
+```
+
+### 查看仓库状态
+
+```shell
+git status
+
+# 例如：修改了vue.config.js
+> git status
+
+On branch guizhou-gb/develop-shiy-s
+Your branch is up to date with 'origin/guizhou-gb/develop-shiy-s'.     
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   vue.config.js
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+### 暂存文件
+
+```shell
+# 暂存单个文件
+git add <file>
+
+# 暂存所有文件
+git add .
+
+# 暂存指定文件
+git add <file1> <file2> <file3>
+```
+
+### 提交代码
+
+*最常见的用法如下所示：如果没有 `-m` 参数，会进入 vi 编辑模式，然后写入提交信息，最后输入`:wq`保存并退出。*
+
+- -m 提交信息
+- -a 跳过add操作
+- -am 跳过add操作简写
+- --amend 修改提交信息
+
+```shell
+# 提交所有暂存文件，将进入vi 编辑器编辑提交信息
+git commit
+
+# 提交所有暂存文件，直接提交到本地仓库
+git commit -m "commit message"
+
+# 提交所有文件，不需要暂存文件直接提交到本地仓库
+git commit -a -m "commit message"
+
+# 提交指定文件
+git commit -m "commit message" <file1> <file2> <file3>
+
+# 跳过add 操作
+git commit -am "commit message"
+
+# 改写提交信息
+git commit --amend -m "commit message"
+```
+
+### 查看当前分支提交记录
+
+- -p：显示提交的补丁（具体更改内容）
+- --oneline：以简洁的一行格式显示提交信息
+- --graph：以图形化方式显示分支和合并历史
+- --decorate：显示分支和标签指向的提交
+
+```shell
+git log
+```
+
+例如：
+
+```shell
+> git log
+commit 48a61456da0af412f07684b0cdeb4bc085672cf2 (HEAD -> develop, origin/develop)
+Author: StrugglingBirds <shiyanggreat@163.com>
+Date:   Fri Feb 18 20:55:25 2022 +0800
+
+    Update develop.yml
+
+commit fa654a2ef67b8cdb6adaa183925a0e66a8201b9f
+Author: StrugglingBirds <shiyanggreat@163.com>
+Date:   Fri Feb 18 18:18:54 2022 +0800
+
+    修改配置文件
+```
+
+### 从远程仓库拉取代码到本地仓库
+
+- 可以跨分支拉取合并远程代码到本地仓库，git pull是git fetch + git merge的简写。
+- origin [远程分支名]:[本地分支名]可省略（默认当前远程分支拉取到当前的本地分支）
+
+```shell
+git pull origin [远程分支名]:[本地分支名]
+```
+
+### 推送本地仓库到远程仓库
+
+```shell
+git push origin [远程分支名]:[本地分支名]
+```
+
+如果本地版本与远程版本有差异，但又要强制推送可以使用 --force 参数：
+
+```shell
+git push origin [远程分支名] --force
+```
+
+删除远程分支
+
+```shell
+git push origin --delete <branch name>
+```
+
+### 代码回滚
+
+代码commit后，git会生成一个代码快照，且git会生成一个hash串即 commit id
+
+#### git reset
+
+```shell
+# 回退到上一个版本
+git reset --hard HEAD^
+
+# 回退到指定版本
+git reset --hard <commit id>
+```
+
+git reset通常用于撤销本地的提交或调整分支历史，特别是在需要清理历史或恢复到某个状态时。由于它可能修改或删除提交历史，因此在使用时需要特别谨慎。
+
+#### git revert
+
+```shell
+git revert <commit id>
+```
+
+git revert 用于撤销一个或多个提交。 它会创建一个新的提交，该提交将撤销指定的提交，是指定提交的逆操作，并且保留其他提交记录。
+
+[后端元宇宙【Git进阶命令-revert】](https://zhuanlan.zhihu.com/p/676266979)
 
 ## git hook
 
@@ -60,5 +229,3 @@ const stagedFile = execSync('git diff --cached --name-only', {encoding: 'utf-8'}
 // 以换行符切字符串转为提交的文件数组列表
 const commitFiles = stagedFile.split('\n').filter(filepath => filepath)
 ```
-
-### git强行推送远程仓库

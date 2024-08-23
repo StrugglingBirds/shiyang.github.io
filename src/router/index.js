@@ -4,7 +4,13 @@ const routes = [
   {
     name: 'home',
     path: '/',
-    component: () => import('../views/home')
+    component: () => import('../views/document/home.vue'),
+    redirect: '/document/git.md'
+  },
+  {
+    name: 'document',
+    path: '/document/:doc',
+    component: () => import('../views/document/index.vue')
   }
 ]
 

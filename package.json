@@ -13,6 +13,7 @@
     "core-js": "^3.6.5",
     "highlight.js": "^11.4.0",
     "marked": "^4.0.12",
+    "pdfjs-dist": "^4.3.136",
     "vant": "^3.4.2",
     "vue": "^3.0.0",
     "vue-router": "4"

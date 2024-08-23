@@ -1,6 +1,6 @@
 # GIT
 
-## git command
+## git command基本操作
 
 ### 克隆项目
 
